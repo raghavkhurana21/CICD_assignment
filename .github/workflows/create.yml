@@ -8,8 +8,8 @@ on:
  
     
 env:
-  buck: teststorage1983
-  TFSTATE_FILE: bucket.tfstate
+  bucket: teststorage1983
+  tfstate_file: raghav.tfstate
   
   aws-region: ${{github.event.inputs.aws-region-name}}
 
@@ -41,7 +41,7 @@ jobs:
       - name: terraform init  
         run: |
           cd bucket
-          terraform init -reconfigure -backend-config="bucket=${{env.buck}}" -backend-config="key=${{env.TFSTATE_FILE}}"
+          terraform init -reconfigure -backend-config="bucket=${{env.bucket}}" -backend-config="key=${{env.tfstate_file}}"
       
       - name: terraform plan
         run: |
