@@ -10,6 +10,3 @@ variable "tags" {
     type = map(any)
 }
 
-variable "vol_tags" {
-    type = map(any)
-}
